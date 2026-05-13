@@ -48,6 +48,6 @@ I am particularly interested in the empirical implementation of Dupire's Local V
 
 ## Contact
 
-GitHub: [GitHub](https://github.com/yourusername)
+GitHub: [GitHub](https://github.com/adiityaa1106)
 
-LinkedIn: [LinkedIn](https://linkedin.com/in/yourlinkedinusername)
+LinkedIn: [LinkedIn](https://linkedin.com/in/adiityaa1106)
