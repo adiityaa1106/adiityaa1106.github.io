@@ -50,14 +50,12 @@
     min-height: 100vh;
   }
 
-  /* ── Layout ─────────────────────────────── */
   .site-wrap {
     max-width: 820px;
     margin: 0 auto;
     padding: 0 2rem;
   }
 
-  /* ── Nav ─────────────────────────────────── */
   nav {
     padding: 2rem 0 1.5rem;
     display: flex;
@@ -97,7 +95,6 @@
 
   .nav-links a:hover { color: var(--accent); }
 
-  /* ── Sections ────────────────────────────── */
   section {
     padding: 4rem 0;
     border-bottom: 1px solid var(--rule);
@@ -115,7 +112,6 @@
     margin-bottom: 2rem;
   }
 
-  /* ── About / Hero ────────────────────────── */
   .about-grid {
     display: grid;
     grid-template-columns: 1fr auto;
@@ -166,37 +162,11 @@
     transition: background 0.15s, color 0.15s;
   }
 
-  .btn-primary {
-    background: var(--accent);
-    color: #fff;
-  }
-
+  .btn-primary { background: var(--accent); color: #fff; }
   .btn-primary:hover { background: #1e3560; }
-
-  .btn-outline {
-    border: 1px solid var(--rule);
-    color: var(--ink-2);
-    background: transparent;
-  }
-
+  .btn-outline { border: 1px solid var(--rule); color: var(--ink-2); background: transparent; }
   .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
 
-  .avatar-placeholder {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    background: var(--accent-light);
-    border: 1px solid var(--rule);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--serif);
-    font-size: 2rem;
-    color: var(--accent);
-    flex-shrink: 0;
-  }
-
-  /* ── Interests ───────────────────────────── */
   .tags {
     display: flex;
     flex-wrap: wrap;
@@ -214,7 +184,6 @@
     letter-spacing: 0.01em;
   }
 
-  /* ── Research entries ────────────────────── */
   .paper-list { list-style: none; }
 
   .paper-entry {
@@ -223,18 +192,6 @@
   }
 
   .paper-entry:last-child { border-bottom: none; }
-
-  .paper-status {
-    font-family: var(--sans);
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink-3);
-    margin-bottom: 0.35rem;
-  }
-
-  .paper-status.wip { color: #b05a00; }
 
   .paper-title {
     font-family: var(--serif);
@@ -260,7 +217,6 @@
     max-width: 620px;
   }
 
-  /* ── Teaching ────────────────────────────── */
   .teaching-list { list-style: none; }
 
   .teaching-entry {
@@ -283,10 +239,7 @@
     margin-bottom: 0.2rem;
   }
 
-  .teaching-name {
-    font-size: 1rem;
-    color: var(--ink);
-  }
+  .teaching-name { font-size: 1rem; color: var(--ink); }
 
   .teaching-role {
     font-family: var(--sans);
@@ -303,7 +256,6 @@
     text-align: right;
   }
 
-  /* ── Conferences ─────────────────────────── */
   .placeholder-box {
     border: 1px dashed var(--rule);
     border-radius: 4px;
@@ -314,7 +266,6 @@
     font-size: 0.85rem;
   }
 
-  /* ── Contact ─────────────────────────────── */
   .contact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -322,11 +273,7 @@
     margin-top: 0.5rem;
   }
 
-  .contact-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-  }
+  .contact-item { display: flex; flex-direction: column; gap: 0.2rem; }
 
   .contact-label {
     font-family: var(--sans);
@@ -337,20 +284,10 @@
     color: var(--ink-3);
   }
 
-  .contact-value {
-    font-family: var(--sans);
-    font-size: 0.88rem;
-    color: var(--ink);
-  }
-
-  .contact-value a {
-    color: var(--link);
-    text-decoration: none;
-  }
-
+  .contact-value { font-family: var(--sans); font-size: 0.88rem; color: var(--ink); }
+  .contact-value a { color: var(--link); text-decoration: none; }
   .contact-value a:hover { text-decoration: underline; }
 
-  /* ── Footer ──────────────────────────────── */
   footer {
     padding: 2rem 0;
     font-family: var(--sans);
@@ -362,10 +299,8 @@
     gap: 0.5rem;
   }
 
-  /* ── Responsive ──────────────────────────── */
   @media (max-width: 600px) {
     .about-grid { grid-template-columns: 1fr; }
-    .avatar-placeholder { width: 80px; height: 80px; font-size: 1.4rem; }
     .about-name { font-size: 1.9rem; }
     .teaching-entry { grid-template-columns: 1fr; }
     .teaching-term { text-align: left; }
@@ -388,10 +323,10 @@
       <li><a href="https://drive.google.com/file/d/1G6eUYp0U-rkd-lvhTv490Mn9TG_wlFqG/view?usp=share_link" target="_blank">CV ↗</a></li>
       <li style="display:flex;align-items:center;gap:0.5rem;">
         <a href="https://github.com/adiityaa1106" target="_blank" class="social-icon" aria-label="GitHub">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
         </a>
         <a href="https://www.linkedin.com/in/adiityaa1106/" target="_blank" class="social-icon" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
       </li>
     </ul>
@@ -406,7 +341,7 @@
         <p class="about-title">PhD Student in Mathematical Finance &nbsp;·&nbsp; IIT Kanpur</p>
         <p class="about-bio">
           I am a doctoral researcher at the Indian Institute of Technology Kanpur, working under the supervision of
-          <a href="#" style="color: var(--link); text-decoration: none; border-bottom: 1px solid var(--rule);">Prof. Joydeep Dutta</a>.
+          Prof. Joydeep Dutta.
           My research lies at the intersection of mathematical finance, stochastic analysis, and computational methods,
           with a focus on volatility modelling and portfolio optimisation.
         </p>
@@ -435,7 +370,8 @@
         </div>
       </div>
 
-      <img src="aditya.jpg" alt="Aditya Chauhan" style="width:160px;height:160px;border-radius:50%;object-fit:cover;object-position:center 15%;border:1px solid var(--rule);flex-shrink:0;">
+      <img src="aditya.jpg" alt="Aditya Chauhan" style="width:200px;height:200px;border-radius:50%;object-fit:cover;object-position:center 10%;border:1px solid var(--rule);flex-shrink:0;">
+    </div>
   </section>
 
   <!-- RESEARCH -->
@@ -447,27 +383,19 @@
       <ul class="paper-list">
 
         <li class="paper-entry">
-          <p class="paper-status wip">In preparation</p>
           <p class="paper-title">Sparse Portfolio Optimisation with ESG Constraints: A Two-Stage Preconditioned Proximal Approach</p>
           <p class="paper-authors">
-            <!-- Add co-author names here, e.g.:  <span class="self">Aditya Chauhan</span>, Co-Author Name -->
             <span class="self">Aditya Chauhan</span> (with Kanchan Mittal)
           </p>
-          <p class="paper-desc">
-            <!-- Add a one-line description of the paper here -->
-          </p>
+          <p class="paper-desc"></p>
         </li>
 
         <li class="paper-entry">
-          <p class="paper-status wip">In preparation</p>
           <p class="paper-title">Arbitrage-Free Implied Volatility Surfaces using Conditional Variational Autoencoders (c-VAE)</p>
           <p class="paper-authors">
-            <!-- Add co-author names here -->
             <span class="self">Aditya Chauhan</span> (with Lavanya Pareek)
           </p>
-          <p class="paper-desc">
-            <!-- Add a one-line description of the paper here -->
-          </p>
+          <p class="paper-desc"></p>
         </li>
 
       </ul>
@@ -475,9 +403,7 @@
 
     <div>
       <p style="font-family: var(--sans); font-size: 0.78rem; color: var(--ink-3); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1rem;">Publications</p>
-      <div class="placeholder-box">
-        Publications will appear here.
-      </div>
+      <div class="placeholder-box">Publications will appear here.</div>
     </div>
   </section>
 
@@ -522,9 +448,7 @@
   <!-- CONFERENCES -->
   <section id="conferences">
     <p class="section-label">Conferences &amp; Talks</p>
-    <div class="placeholder-box">
-      Conference presentations and invited talks will appear here.
-    </div>
+    <div class="placeholder-box">Conference presentations and invited talks will appear here.</div>
   </section>
 
   <!-- CONTACT -->
@@ -563,6 +487,5 @@
   </footer>
 
 </div>
-
 </body>
 </html>
