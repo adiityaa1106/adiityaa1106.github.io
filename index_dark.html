@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aditya Chauhan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --serif: 'Libre Baskerville', Georgia, serif;
+  --mono: 'JetBrains Mono', 'Courier New', monospace;
+  --bg: #0e0e0c;
+  --bg-2: #161614;
+  --bg-3: #1e1e1b;
+  --ink: #e8e6df;
+  --ink-2: #a8a69f;
+  --ink-3: #5a5a55;
+  --rule: #2a2a26;
+  --accent: #c8a96e;
+  --accent-dim: #8a7248;
+  --accent-bg: rgba(200,169,110,0.07);
+}
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  font-family: var(--serif);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.8;
+  min-height: 100vh;
+}
+
+.wrap { max-width: 860px; margin: 0 auto; padding: 0 2rem; }
+
+nav {
+  padding: 2.5rem 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--rule);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.nav-name {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.nav-links a:hover { color: var(--accent); }
+
+.nav-links .cv-link {
+  color: var(--accent);
+  border: 1px solid var(--accent-dim);
+  padding: 0.3rem 0.75rem;
+  border-radius: 2px;
+  transition: background 0.15s;
+}
+.nav-links .cv-link:hover { background: var(--accent-bg); }
+
+section { padding: 4.5rem 0; border-bottom: 1px solid var(--rule); }
+section:last-of-type { border-bottom: none; }
+
+.s-label {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-dim);
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.s-label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 3rem;
+  align-items: start;
+}
+
+.about-name {
+  font-family: var(--serif);
+  font-size: 2.8rem;
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.01em;
+}
+
+.about-pos {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--ink-3);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.about-bio {
+  font-size: 1rem;
+  color: var(--ink-2);
+  line-height: 1.85;
+  margin-bottom: 1rem;
+  max-width: 580px;
+}
+
+.interest-block { margin-top: 2rem; }
+
+.i-heading {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 0.75rem;
+}
+
+.tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+.tag {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  padding: 0.25rem 0.65rem;
+  border: 1px solid var(--rule);
+  color: var(--ink-2);
+  border-radius: 2px;
+  transition: border-color 0.15s, color 0.15s;
+}
+.tag:hover { border-color: var(--accent-dim); color: var(--accent); }
+
+.cta-row { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 2rem; }
+
+.btn {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.5rem 1.1rem;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.btn-gold { background: var(--accent); color: var(--bg); border: 1px solid var(--accent); }
+.btn-gold:hover { background: #d4b87a; }
+.btn-ghost { background: transparent; color: var(--ink-2); border: 1px solid var(--rule); }
+.btn-ghost:hover { border-color: var(--ink-3); color: var(--ink); }
+
+.photo-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.photo-wrap img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 10%;
+  border: 1px solid var(--rule);
+  filter: grayscale(20%);
+}
+
+.social-row { display: flex; gap: 0.5rem; }
+
+.soc-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  color: var(--ink-3);
+  text-decoration: none;
+  transition: border-color 0.15s, color 0.15s;
+}
+.soc-btn:hover { border-color: var(--accent-dim); color: var(--accent); }
+.soc-btn svg { width: 15px; height: 15px; fill: currentColor; }
+
+.sub-label {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 1.25rem;
+}
+
+.paper-list { list-style: none; }
+
+.paper {
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+.paper:last-child { border-bottom: none; }
+
+.paper-num {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--ink-3);
+  padding-top: 0.2rem;
+  letter-spacing: 0.04em;
+}
+
+.paper-title {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+  line-height: 1.5;
+}
+
+.paper-authors {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--ink-3);
+  margin-bottom: 0.5rem;
+  font-weight: 300;
+}
+.paper-authors .me { color: var(--ink-2); }
+
+.paper-desc { font-size: 0.92rem; color: var(--ink-3); line-height: 1.7; max-width: 580px; }
+
+.placeholder {
+  border: 1px dashed var(--rule);
+  padding: 2.5rem;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--ink-3);
+  letter-spacing: 0.06em;
+  border-radius: 2px;
+}
+
+.teach-list { list-style: none; }
+
+.teach-row {
+  display: grid;
+  grid-template-columns: 90px 1fr auto;
+  gap: 1.5rem;
+  align-items: baseline;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.teach-row:last-child { border-bottom: none; }
+
+.teach-code {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+}
+
+.teach-name { font-size: 0.98rem; color: var(--ink); }
+
+.teach-role {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--ink-3);
+  font-weight: 300;
+  margin-top: 0.15rem;
+}
+
+.teach-term {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--ink-3);
+  white-space: nowrap;
+  text-align: right;
+  font-weight: 300;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.c-label {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 0.4rem;
+}
+
+.c-val { font-family: var(--mono); font-size: 0.82rem; color: var(--ink-2); font-weight: 300; }
+.c-val a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--rule); transition: color 0.15s, border-color 0.15s; }
+.c-val a:hover { color: var(--accent); border-color: var(--accent-dim); }
+
+footer {
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--ink-3);
+  letter-spacing: 0.06em;
+  border-top: 1px solid var(--rule);
+}
+
+@media (max-width: 620px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .photo-wrap { flex-direction: row; align-items: center; }
+  .about-name { font-size: 2rem; }
+  .teach-row { grid-template-columns: 1fr; gap: 0.25rem; }
+  .teach-term { text-align: left; }
+  .paper { grid-template-columns: 1fr; }
+  .paper-num { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-name">Aditya Chauhan</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#conferences">Talks</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://drive.google.com/file/d/1G6eUYp0U-rkd-lvhTv490Mn9TG_wlFqG/view?usp=share_link" target="_blank" class="cv-link">CV ↗</a></li>
+    </ul>
+  </nav>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <p class="s-label">About</p>
+    <div class="about-grid">
+      <div>
+        <h1 class="about-name">Aditya Chauhan</h1>
+        <p class="about-pos">PhD Student &nbsp;·&nbsp; Mathematical Finance &nbsp;·&nbsp; IIT Kanpur</p>
+        <p class="about-bio">
+          I am a doctoral researcher at the Indian Institute of Technology Kanpur, working under the supervision of
+          Prof. Joydeep Dutta.
+          My research sits at the intersection of mathematical finance, stochastic analysis, and computational optimisation,
+          with a focus on volatility modelling and portfolio design.
+        </p>
+        <p class="about-bio">
+          I am particularly interested in Dupire's local volatility framework, arbitrage-free surface construction,
+          and ESG-aware sparse portfolio optimisation.
+        </p>
+
+        <div class="interest-block">
+          <p class="i-heading">Research interests</p>
+          <div class="tags">
+            <span class="tag">Local Volatility</span>
+            <span class="tag">Stochastic Volatility</span>
+            <span class="tag">Derivatives Pricing</span>
+            <span class="tag">Measure Theory</span>
+            <span class="tag">Portfolio Optimisation</span>
+            <span class="tag">Financial Econometrics</span>
+            <span class="tag">Deep Learning in Finance</span>
+          </div>
+        </div>
+
+        <div class="cta-row">
+          <a href="https://drive.google.com/file/d/1G6eUYp0U-rkd-lvhTv490Mn9TG_wlFqG/view?usp=share_link" target="_blank" class="btn btn-gold">Curriculum Vitae ↗</a>
+          <a href="#research" class="btn btn-ghost">Research</a>
+          <a href="#contact" class="btn btn-ghost">Contact</a>
+        </div>
+      </div>
+
+      <div class="photo-wrap">
+        <img src="aditya.jpg" alt="Aditya Chauhan">
+        <div class="social-row">
+          <a href="https://github.com/adiityaa1106" target="_blank" class="soc-btn" aria-label="GitHub">
+            <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/adiityaa1106/" target="_blank" class="soc-btn" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="mailto:aschouhan25@iitk.ac.in" class="soc-btn" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <p class="s-label">Research</p>
+
+    <div style="margin-bottom: 3rem;">
+      <p class="sub-label">Working Papers</p>
+      <ul class="paper-list">
+
+        <li class="paper">
+          <span class="paper-num">WP·01</span>
+          <div>
+            <p class="paper-title">Sparse Portfolio Optimisation with ESG Constraints: A Two-Stage Preconditioned Proximal Approach</p>
+            <p class="paper-authors"><span class="me">Aditya Chauhan</span> &amp; Kanchan Mittal</p>
+            <p class="paper-desc">Extends the ASMP framework with an ESG dimension using a two-stage preconditioned proximal algorithm with generalised Nesterov momentum.</p>
+          </div>
+        </li>
+
+        <li class="paper">
+          <span class="paper-num">WP·02</span>
+          <div>
+            <p class="paper-title">Arbitrage-Free Implied Volatility Surfaces using Conditional Variational Autoencoders</p>
+            <p class="paper-authors"><span class="me">Aditya Chauhan</span> &amp; Lavanya Pareek</p>
+            <p class="paper-desc">Constructs arbitrage-free implied volatility surfaces using a c-VAE architecture, with application to derivatives pricing.</p>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+
+    <div>
+      <p class="sub-label">Publications</p>
+      <div class="placeholder">Publications will appear here.</div>
+    </div>
+  </section>
+
+  <!-- TEACHING -->
+  <section id="teaching">
+    <p class="s-label">Teaching</p>
+    <ul class="teach-list">
+
+      <li class="teach-row">
+        <span class="teach-code">HSO 201</span>
+        <div>
+          <p class="teach-name">Applied Probability and Statistics</p>
+          <p class="teach-role">Teaching Assistant &nbsp;·&nbsp; IIT Kanpur</p>
+        </div>
+        <span class="teach-term">Spring 2026–27</span>
+      </li>
+
+      <li class="teach-row">
+        <span class="teach-code">ECO 915E</span>
+        <div>
+          <p class="teach-name">Machine Learning Applications</p>
+          <p class="teach-role">Teaching Assistant &nbsp;·&nbsp; IIT Kanpur</p>
+        </div>
+        <span class="teach-term">Jan–Mar 2026</span>
+      </li>
+
+      <li class="teach-row">
+        <span class="teach-code">NPTEL</span>
+        <div>
+          <p class="teach-name">Probability and Stochastics for Finance</p>
+          <p class="teach-role">Teaching Assistant &nbsp;·&nbsp; NPTEL / IIT Kanpur</p>
+        </div>
+        <div style="text-align:right;">
+          <p class="teach-term">Autumn 2024–25</p>
+          <p class="teach-term">Autumn 2025–26</p>
+        </div>
+      </li>
+
+    </ul>
+  </section>
+
+  <!-- CONFERENCES -->
+  <section id="conferences">
+    <p class="s-label">Conferences &amp; Talks</p>
+    <div class="placeholder">Conference presentations and invited talks will appear here.</div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <p class="s-label">Contact</p>
+    <div class="contact-grid">
+      <div>
+        <p class="c-label">Email</p>
+        <p class="c-val"><a href="mailto:aschouhan25@iitk.ac.in">aschouhan25@iitk.ac.in</a></p>
+      </div>
+      <div>
+        <p class="c-label">Address</p>
+        <p class="c-val" style="line-height:1.7;">Department of Economic Sciences<br>IIT Kanpur, UP 208016, India</p>
+      </div>
+      <div>
+        <p class="c-label">Profiles</p>
+        <div style="display:flex;gap:0.5rem;margin-top:0.3rem;">
+          <a href="https://github.com/adiityaa1106" target="_blank" class="soc-btn" aria-label="GitHub">
+            <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/adiityaa1106/" target="_blank" class="soc-btn" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="mailto:aschouhan25@iitk.ac.in" class="soc-btn" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Aditya Chauhan &nbsp;·&nbsp; IIT Kanpur</span>
+    <span>Last updated: 2026</span>
+  </footer>
+
+</div>
+</body>
+</html>
